@@ -20,6 +20,7 @@ import YuflymaHCP from "../collapsible/YuflymaHCP";
 import VegzelmaHCP from "../collapsible/VegzelmaHCP";
 import VegzelmaPatient from "../collapsible/VegzelmaPatient";
 import ZymfentraHCP from "../collapsible/ZymfentraHCP";
+import ZymfentraPatient from "../collapsible/ZymfentraPatient";
 
 const InquiryForm = () => {
   var [role, setRole] = useState("");
@@ -288,6 +289,16 @@ const InquiryForm = () => {
 
           {category === "yuflyma" && role === "patient" ? (
             <YuflymaPatient
+              shouldHideDiv={shouldHideDiv}
+              collapseText={collapseText}
+              isiTextRef={isiTextRef}
+              readLess={readLess}
+            />
+          ) : null}
+
+          {/* Zymfentra */}
+          {category === "zymfentra" && role === "patient" ? (
+            <ZymfentraPatient
               shouldHideDiv={shouldHideDiv}
               collapseText={collapseText}
               isiTextRef={isiTextRef}
