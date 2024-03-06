@@ -235,7 +235,7 @@ const InquiryForm = () => {
 
   return (
     <>
-      {lastStep ? (
+      {!lastStep ? (
         <SubmittedForm data={data} />
       ) : (
         <>
