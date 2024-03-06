@@ -5,6 +5,7 @@ import Check from "../../assets/img/check.svg";
 import card from "../../assets/img/card.png";
 import cardyuflyma from "../../assets/img/card-yuflyma.png";
 import bevacizumab from "../../assets/img/Color_bevacizumab_adcdHigh.png";
+import cardzymfentra from "../../assets/img/card-zymfentra.png";
 import {
   Link,
   useLocation,
@@ -12,6 +13,7 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import yuflymaLogo from "../../assets/img/yuflyma-logo.png";
+import ZymfentraLogo from "../../assets/img/Zymfentra_brand.png";
 
 const SubmittedForm = ({ data }) => {
   const [role, setRole] = useState("");
@@ -32,9 +34,11 @@ const SubmittedForm = ({ data }) => {
   return (
     <section className="rselection roles-section2">
       {category === "yuflyma" ? (
-        <img src={yuflymaLogo} className="bevacizumab" />
+        <img src={yuflymaLogo} className="bevacizumab" alt="yuflyma" />
       ) : category === "vegzelma" ? (
-        <img src={bevacizumab} className="bevacizumab" />
+        <img src={bevacizumab} className="bevacizumab" alt="vegzelma" />
+      ) : category === "zymfentra" ? (
+        <img src={ZymfentraLogo} className="bevacizumab" alt="zymfentra" />
       ) : null}
       <Container>
         <Row className="justify-content-center">
@@ -62,6 +66,8 @@ const SubmittedForm = ({ data }) => {
                     <img src={cardyuflyma} alt="card" />
                   ) : category === "vegzelma" ? (
                     <img src={card} alt="card" />
+                  ) : category === "zymfentra" ? (
+                    <img src={cardzymfentra} alt="card" />
                   ) : null}
                   <span className={category === "yuflyma" ? "spanYuflyma" : ""}>
                     {cardID}
