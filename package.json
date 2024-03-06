@@ -1,0 +1,58 @@
+{
+  "name": "celltrion",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "assert": "^2.0.0",
+    "bootstrap": "^5.2.3",
+    "buffer": "^6.0.3",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
+    "react-cookie-consent": "^8.0.1",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.5",
+    "react-html-parser": "^2.0.2",
+    "react-input-mask": "^2.0.4",
+    "react-router-dom": "^6.8.2",
+    "react-scripts": "5.0.1",
+    "react-simple-captcha": "^9.0.2",
+    "react-to-print": "^2.14.12",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:prod": "env-cmd -f ./.env.production npm run-script build",
+    "build:dev": "env-cmd -f ./.env.development npm run-script build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "sass": "^1.58.3"
+  }
+}

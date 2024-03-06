@@ -1,0 +1,149 @@
+@media (max-width: 1024px) {
+    .entry {
+        min-height: calc(100vh - 242px);
+        background-position-x: 15%;
+    }
+}
+
+@media (max-width: 991px) {
+    .captcha {
+        background-position: 70%;
+    }
+
+    .rselection {
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+
+    .rselection-wrap {
+        .row {
+            &>div {
+                &:not(:last-of-type) {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+
+    .roles-section .bevacizumab,
+    .roles-section2 .bevacizumab {
+        margin-bottom: 30px;
+    }
+
+    .roles-section .role-wrap {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .logo {
+        img {
+            max-width: 250px;
+        }
+    }
+
+    .captcha-recaptcha {
+        margin: 12px 0;
+        padding-left: 0;
+    }
+
+    .captcha-input {
+        padding-left: 0;
+    }
+
+    .captcha {
+        min-height: 640px;
+    }
+
+    .footerT {
+        img {
+            max-width: 200px;
+
+            &:first-of-type {
+                margin-bottom: 25px;
+                max-width: 230px;
+            }
+        }
+    }
+
+    .footerB-item {
+        margin-top: 12px;
+    }
+
+    .footerB-info {
+        flex-direction: column;
+        font-weight: 600;
+    }
+
+    .entry {
+        padding-top: 190px;
+        min-height: 900px;
+    }
+
+    .rselection {
+        padding-top: 180px;
+    }
+
+    .rselection-wrap {
+        padding: 20px;
+    }
+
+    .roles-section .bevacizumab,
+    .roles-section2 .bevacizumab {
+        max-width: 170px;
+    }
+
+    .roles-section .role-wrap {
+        padding: 20px;
+    }
+
+    .step2 .row>div:last-of-type .formgroup {
+        margin-left: 0;
+    }
+
+    .step2 .formgroup {
+        max-width: 100%;
+    }
+
+    .rselection-wrap .row>div:not(:last-of-type) {
+        margin-bottom: 0;
+    }
+
+    .home-text-wrap {
+        margin-top: 50px;
+    }
+
+    .home-action {
+        padding-left: 0;
+    }
+
+    .home-action a img {
+        width: 148px;
+    }
+
+    .home-action a {
+        padding: 23px 30px;
+    }
+
+    .home-action a span {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .home-text p {
+        font-size: 22px;
+        line-height: 31px;
+    }
+
+    .home-text h1 {
+        font-size: 18px;
+    }
+    a:hover {
+        color: hotpink;
+    }
+}

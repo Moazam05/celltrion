@@ -1,0 +1,35 @@
+.footer {
+    background: #8CC63F;
+}
+
+.footerT {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 57px 0 32px;
+    @media (min-width:768px) {
+        flex-direction: row;
+    }
+}
+
+.footerB {
+    padding-bottom: 8px;
+    font-weight: 600;
+    p,
+    a {
+        text-align: left;
+        font-size: 10px;
+        line-height: 14px;
+        font-weight: 500;
+        letter-spacing: 0.13px;
+        color: #000000;
+    }
+
+
+    &-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
