@@ -97,6 +97,111 @@ const ZymfentraPatient = ({
                     </p>
                   </li>
                 </ul>
+                <li>
+                  <p>
+                    <strong>Risk of Cancer:</strong> There have been cases of
+                    unusual cancers in children and teenage patients using tumor
+                    necrosis factor (TNF) blocker medicines, such as ZYMFENTRA.
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        For people receiving TNF blocker medicines, the chances
+                        of getting lymphoma or other cancers may increase.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Some people receiving TNF blockers, developed a rare
+                        type of cancer called hepatosplenic T-cell lymphoma.
+                        This type of cancer often results in death. Most of
+                        these people were male teenagers or young men. Also,
+                        most people were being treated for Crohn's disease or
+                        ulcerative colitis with a TNF blocker and another
+                        medicine called azathioprine or 6- mercaptopurine.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        People who have been treated for Crohn's disease,
+                        ulcerative colitis, for a long time may be more likely
+                        to develop lymphoma. This is especially true for people
+                        with very active disease.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Some people treated with infliximab products, have
+                        developed certain kinds of skin cancer. If any changes
+                        in the appearance of your skin or growths on your skin
+                        occur during or after your treatment, tell your doctor.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Patients with Chronic Obstructive Pulmonary Disease
+                        (COPD), a specific type of lung disease, may have an
+                        increased risk for getting cancer while being treated
+                        with ZYMFENTRA.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Tell your doctor if you have ever had any type of
+                        cancer. Discuss with your doctor any need to adjust
+                        medicines you may be taking.
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </li>
+            </ul>
+            <br />
+            <p>
+              <strong>Do not take ZYMFENTRA if you:</strong>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Have had an allergic reaction to ZYMFENTRA, other infliximab
+                  products, any murine proteins or any of the ingredients in
+                  ZYMFENTRA.
+                </p>
+              </li>
+            </ul>
+            <br />
+            <p>
+              <strong>
+                Before you receive ZYMFENTRA, tell your doctor about all of your
+                medical conditions, including if you:
+              </strong>
+            </p>
+            <ul>
+              <li>
+                <p>Have an infection.</p>
+              </li>
+              <li>
+                <p>Have other liver problems including liver failure.</p>
+              </li>
+              <li>
+                <p> Have heart failure or other heart conditions.</p>
+              </li>
+              <li>
+                <p>Have or have had any type of cancer.</p>
+              </li>
+              <li>
+                <p>
+                  Have COPD (Chronic Obstructive Pulmonary Disease), a specific
+                  type of lung disease.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Have or have had a condition that affects your nervous system
+                  such as multiple sclerosis, or Guillain-Barré syndrome, or if
+                  you experience any numbness or tingling, or if you have had a
+                  seizure.
+                </p>
               </li>
             </ul>
             {/* End */}
