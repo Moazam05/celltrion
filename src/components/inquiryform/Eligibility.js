@@ -28,6 +28,8 @@ const Eligibility = ({
   const [exitTerms, setExitTerms] = useState(false);
   const { category } = useParams();
 
+  const isZymfentra = category === "zymfentra";
+
   useEffect(() => {
     const passedRole = searchParams.get("role");
     if (passedRole) {
@@ -123,6 +125,8 @@ const Eligibility = ({
   const residencyLabel = `${
     isPatient
       ? "Are you a resident of the United States or a U.S. Territory?"
+      : !isPatient && isZymfentra
+      ? "Is the patient a resident of the United States or the Commonwealth of Puerto Rico?"
       : "Is the patient a resident of the United States or Puerto Rico?"
   }`;
   const ageLabel = `${
@@ -146,13 +150,17 @@ const Eligibility = ({
 
       <ExitTerms
         show={exitTerms}
-        externalLink="https://www.celltrionconnect.com/terms-of-use/"
+        externalLink={
+          isZymfentra
+            ? "https://www.celltrionconnect.com/user-terms-and-conditions"
+            : "https://www.celltrionconnect.com/terms-of-use/"
+        }
         onHide={() => setExitTerms(false)}
       />
 
       <div className="heads-icon">
         <div className="hi-icon">
-          <img src={Note} />
+          <img src={Note} alt="notes" />
         </div>
         <div>
           <Card.Subtitle className="mb-2 text-muted">
@@ -167,8 +175,9 @@ const Eligibility = ({
           <Form.Group className="mb-4" controlId="Q_INDICATION_YUFLYMA">
             <div>
               {isPatient ? "Have you been" : "Has the patient been "} prescribed
-              YUFLYMA<sup className="reg">&reg;</sup> for any one of the
-              following conditions?
+              YUFLYMA
+              <sup className="reg">&reg;</sup> for any one of the following
+              conditions?
             </div>
             <Form.Select
               id="Q_INDICATION_YUFLYMA"
@@ -198,8 +207,13 @@ const Eligibility = ({
           <Form.Group className="mb-4" controlId="Q_INDICATION_VEGZELMA">
             <div>
               {isPatient ? "Have you been" : "Has the patient been "} prescribed
-              VEGZELMA<sup className="reg">&reg;</sup> for any one of the
-              following conditions?
+              {isZymfentra ? " ZYMFENTRA" : "VEGZELMA"}
+              {isZymfentra ? (
+                <sup>&trade;</sup>
+              ) : (
+                <sup className="reg">&reg;</sup>
+              )}
+              for any one of the following conditions?
             </div>
             <Form.Select
               id="Q_INDICATION_VEGZELMA"
@@ -345,7 +359,9 @@ const Eligibility = ({
             </a>{" "}
             and the Terms and Conditions at{" "}
             <a href="javascript:void(0)" onClick={() => setExitTerms(true)}>
-              www.celltrionconnect.com/terms-of-use/
+              {isZymfentra
+                ? "https://www.celltrionconnect.com/user-terms-and-conditions"
+                : "www.celltrionconnect.com/terms-of-use/"}
             </a>
             , and that I am of legal age.
           </Form.Label>
