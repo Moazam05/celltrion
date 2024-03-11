@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 // Custom
 import VegzelmaEntry from "./VegzelmaEntry";
 import YuflymaEntry from "./YuflymaEntry";
-import Zymfentra from "./Zymfentra";
+import ZymfentraEntry from "./ZymfentraEntry";
 
 const Entry = () => {
   const { category } = useParams();
@@ -15,7 +15,7 @@ const Entry = () => {
       ) : category === "yuflyma" ? (
         <YuflymaEntry />
       ) : category === "zymfentra" ? (
-        <Zymfentra />
+        <ZymfentraEntry />
       ) : null}
     </div>
   );
