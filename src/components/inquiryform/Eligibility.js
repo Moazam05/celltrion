@@ -203,16 +203,12 @@ const Eligibility = ({
               <option value="9">Other</option>
             </Form.Select>
           </Form.Group>
-        ) : (
+        ) : category === "vegzelma" ? (
           <Form.Group className="mb-4" controlId="Q_INDICATION_VEGZELMA">
             <div>
               {isPatient ? "Have you been" : "Has the patient been "} prescribed
-              {isZymfentra ? " ZYMFENTRA" : "VEGZELMA"}
-              {isZymfentra ? (
-                <sup>&trade;</sup>
-              ) : (
-                <sup className="reg">&reg;</sup>
-              )}
+              VEGZELMA
+              <sup className="reg">&reg;</sup>
               for any one of the following conditions?
             </div>
             <Form.Select
@@ -240,6 +236,40 @@ const Eligibility = ({
               <option value="8">Other</option>
             </Form.Select>
           </Form.Group>
+        ) : (
+          <>
+            <Form.Group className="mb-4" controlId="Q_INDICATION_VEGZELMA">
+              <div>
+                {isPatient ? "Have you been" : "Has the patient been "}{" "}
+                prescribed ZYMFENTRA
+                <sup>&trade;</sup> for any one of the following conditions?
+              </div>
+              <Form.Select
+                id="Q_INDICATION_VEGZELMA"
+                name="Q_INDICATION_VEGZELMA"
+                className={indication && "error"}
+                {...register("Q_INDICATION_VEGZELMA", {
+                  onChange: (e) => {
+                    IndicationHandler(e);
+                  },
+                })}
+              >
+                <option selected disabled>
+                  Choose
+                </option>
+                <option value="1">
+                  Moderately to severely active Crohn’s Disease following
+                  treatment with an infliximab product administered
+                  intravenously
+                </option>
+                <option value="2">
+                  Moderately to severely active Ulcerative Colitis following{" "}
+                  treatment with an infliximab product administered
+                  intravenously
+                </option>
+              </Form.Select>
+            </Form.Group>
+          </>
         )}
         <Form.Group className="mb-4" controlId="Q_INSURANCE_TYPE">
           <Form.Label>{insuranceTypeLabel}</Form.Label>
