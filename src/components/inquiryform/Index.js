@@ -48,6 +48,7 @@ const InquiryForm = () => {
   const isiTextRef = useRef(null);
 
   const { category } = useParams();
+  const isZymfentra = category === "zymfentra";
 
   useEffect(() => {
     const passedRole = searchParams.get("role");
@@ -158,16 +159,25 @@ const InquiryForm = () => {
           });
         formData[key] = field.Datatype;
       }
+      console.log("postPayload", postPayload);
+      return;
+      const isZymfentraUrl =
+        "https://mckesson-wrapper-dev-api.azure-api.net/api/submit_patient";
+
       const subscriptionKey = Helper.getOCPAPIMSubscriptionKey();
-      let response = await fetch(Helper.getRegistrationURL(), {
-        method: "POST",
-        body: JSON.stringify(postPayload),
-        headers: {
-          "Content-Type": "application/json",
-          "Ocp-Apim-Subscription-Key": subscriptionKey,
-        },
-      });
+      let response = await fetch(
+        isZymfentra ? isZymfentraUrl : Helper.getRegistrationURL(),
+        {
+          method: "POST",
+          body: JSON.stringify(postPayload),
+          headers: {
+            "Content-Type": "application/json",
+            "Ocp-Apim-Subscription-Key": subscriptionKey,
+          },
+        }
+      );
       let data = await response.json();
+      console.log("data", data);
       setData(data);
       if (response.status === 201) {
         setLoader(false);
