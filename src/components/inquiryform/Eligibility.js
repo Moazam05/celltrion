@@ -203,6 +203,38 @@ const Eligibility = ({
               <option value="9">Other</option>
             </Form.Select>
           </Form.Group>
+        ) : category === "zymfentra" ? (
+          <Form.Group className="mb-4" controlId="Q_INDICATION_ZYMFENTRA">
+            <div>
+              {isPatient ? "Have you been" : "Has the patient been "} prescribed
+              YUFLYMA
+              <sup className="reg">&reg;</sup> for any one of the following
+              conditions?
+            </div>
+            <Form.Select
+              id="Q_INDICATION_ZYMFENTRA"
+              name="Q_INDICATION_ZYMFENTRA"
+              className={indication && "error"}
+              {...register("Q_INDICATION_ZYMFENTRA", {
+                onChange: (e) => {
+                  IndicationHandler(e);
+                },
+              })}
+            >
+              <option selected disabled>
+                Choose
+              </option>
+              <option value="1">Rheumatoid Arthritis</option>
+              <option value="2">Juvenile Idiopathic Arthritis</option>
+              <option value="3">Psoriatic Arthritis</option>
+              <option value="4">Ankylosing Spondylitis</option>
+              <option value="5">Crohn’s Disease</option>
+              <option value="6">Ulcerative Colitis</option>
+              <option value="7">Plaque Psoriasis</option>
+              <option value="8">Hidradenitis Suppurativa</option>
+              <option value="9">Other</option>
+            </Form.Select>
+          </Form.Group>
         ) : category === "vegzelma" ? (
           <Form.Group className="mb-4" controlId="Q_INDICATION_VEGZELMA">
             <div>

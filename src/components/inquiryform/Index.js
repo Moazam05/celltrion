@@ -104,7 +104,11 @@ const InquiryForm = () => {
       setLastStep(false);
     }
     setError(
-      category === "yuflyma" ? "Q_INDICATION_YUFLYMA" : "Q_INDICATION_VEGZELMA",
+      category === "yuflyma"
+        ? "Q_INDICATION_YUFLYMA"
+        : isZymfentra
+        ? "Q_INDICATION_ZYMFENTRA"
+        : "Q_INDICATION_VEGZELMA",
       { type: "focus" },
       { shouldFocus: true }
     );
@@ -159,8 +163,8 @@ const InquiryForm = () => {
           });
         formData[key] = field.Datatype;
       }
-      console.log("postPayload", postPayload);
-      return;
+      // console.log("postPayload", postPayload);
+      // return;
       const isZymfentraUrl =
         "https://mckesson-wrapper-dev-api.azure-api.net/api/submit_patient";
 
@@ -177,7 +181,7 @@ const InquiryForm = () => {
         }
       );
       let data = await response.json();
-      console.log("data", data);
+      // console.log("data", data);
       setData(data);
       if (response.status === 201) {
         setLoader(false);
