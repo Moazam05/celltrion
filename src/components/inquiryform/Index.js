@@ -206,6 +206,10 @@ const InquiryForm = () => {
   const onSubmit = async (data) => {
     if (data && isValid) {
       const isSuccess = await postDataToRest(data);
+      if (isZymfentra) {
+        setStep(step + 1);
+        setLastStep(true);
+      }
       if (isSuccess) {
         setStep(step + 1);
         setLastStep(true);

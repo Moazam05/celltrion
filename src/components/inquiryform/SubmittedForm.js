@@ -20,7 +20,7 @@ const SubmittedForm = ({ data }) => {
   const [searchParams] = useSearchParams();
   const { category } = useParams();
 
-  let cardID = data && data?.cardID[0];
+  let cardID = data && data?.cardID ? data?.cardID[0] : data?.member_id;
   const passedRole = searchParams.get("role");
   const roleName = passedRole.charAt(0).toUpperCase() + passedRole.slice(1);
   localStorage.setItem("cardID", cardID);
@@ -69,9 +69,24 @@ const SubmittedForm = ({ data }) => {
                   ) : category === "zymfentra" ? (
                     <img src={cardzymfentra} alt="card" />
                   ) : null}
-                  <span className={category === "yuflyma" ? "spanYuflyma" : ""}>
+                  <span
+                    className={
+                      category === "yuflyma"
+                        ? "spanYuflyma"
+                        : category === "zymfentra"
+                        ? "spanZymfentra"
+                        : ""
+                    }
+                  >
                     {cardID}
                   </span>
+                  {category === "zymfentra" && (
+                    <>
+                      <span className="binZymfentra">{data?.BIN}</span>
+                      <span className="pcnZymfentra">{data?.PCN}</span>
+                      <span className="groupZymfentra">{data?.GROUP}</span>
+                    </>
+                  )}
                 </div>
                 <div className="button-holders">
                   <Link
